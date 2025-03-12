@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import './TodoList.css';
+import { useTheme } from '../context/ThemeContext';
 
 interface TodoItem {
   id: string;
@@ -9,6 +10,7 @@ interface TodoItem {
 }
 
 const TodoList: React.FC = () => {
+  const { theme } = useTheme();
   const [todos, setTodos] = useState<TodoItem[]>(() => {
     // Load todos from localStorage on initial render
     const savedTodos = localStorage.getItem('todos');
@@ -51,7 +53,10 @@ const TodoList: React.FC = () => {
 
   return (
     <div className="todo-list-container">
-      <h1>Todo List</h1>
+      <h1>
+        <span className="coffee-emoji">☕</span> 
+        Mocha Todo List
+      </h1>
       
       <form onSubmit={addTodo} className="add-todo-form">
         <input
@@ -65,7 +70,10 @@ const TodoList: React.FC = () => {
       </form>
       
       <div className="todo-stats">
-        <p>{todos.length} total tasks • {getCompletedCount()} completed</p>
+        <p>
+          {todos.length} total tasks • {getCompletedCount()} completed • 
+          <span className="theme-info">{theme === 'light' ? 'Light' : 'Dark'} Mode</span>
+        </p>
       </div>
       
       <div className="todos-container">

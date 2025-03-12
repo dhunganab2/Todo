@@ -1,3 +1,45 @@
+:root {
+  /* Light theme (default) - Mocha-inspired light colors */
+  --bg-gradient-start: #f5f1eb;
+  --bg-gradient-end: #e6d7c3;
+  --bg-color: #f8f5f0;
+  --card-bg: #ffffff;
+  --text-color: #5b4636;
+  --text-secondary: #7d6253;
+  --accent-color: #b07c4f;
+  --accent-hover: #8e633e;
+  --border-color: #e0d5c5;
+  --theme-toggle-bg: #e0d5c5;
+  --checkbox-color: #b07c4f;
+  --input-bg: #ffffff;
+  --delete-color: #d35f5f;
+  --delete-hover: rgba(211, 95, 95, 0.1);
+  --completed-color: #a9998b;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  /* Dark theme - Mocha-inspired dark colors */
+  --bg-gradient-start: #392b24;
+  --bg-gradient-end: #241810;
+  --bg-color: #2f2319;
+  --card-bg: #3d2e25;
+  --text-color: #e6d7c3;
+  --text-secondary: #c3b5a3;
+  --accent-color: #d4a26a;
+  --accent-hover: #e8bd88;
+  --border-color: #4e3b30;
+  --theme-toggle-bg: #4e3b30;
+  --checkbox-color: #d4a26a;
+  --input-bg: #4e3b30;
+  --delete-color: #f07171;
+  --delete-hover: rgba(240, 113, 113, 0.2);
+  --completed-color: #7c6958;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,8 +53,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
