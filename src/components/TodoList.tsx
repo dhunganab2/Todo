@@ -55,7 +55,7 @@ const TodoList: React.FC = () => {
     <div className="todo-list-container">
       <h1>
         <span className="coffee-emoji">☕</span> 
-        Mocha Todo List
+        Todo List
       </h1>
       
       <form onSubmit={addTodo} className="add-todo-form">
